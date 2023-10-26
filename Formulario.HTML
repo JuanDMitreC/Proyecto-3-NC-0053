@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulario Clínico</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url(pexels-pixabay-40568.jpg);
+            background-size: cover;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            text-align: center;
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px;
+        }
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #eef3f7;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="number"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+        input[type="submit"] {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Formulario Clínico</h1>
+    <form action="procesar_formulario.php" method="post">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required><br>
+
+        <label for="edad">Edad:</label>
+        <input type="number" id="edad" name="edad" required><br>
+
+        <label>Género:</label>
+        <input type="radio" id="genero-masculino" name="genero" value="Masculino" required>
+        <label for="genero-masculino">Masculino</label>
+        <input type="radio" id="genero-femenino" name="genero" value="Femenino" required>
+        <label for="genero-femenino">Femenino</label><br>
+
+        <label for="sintomas">Síntomas:</label>
+        <select id="sintomas" name="sintomas[]" multiple>
+            <option value="Fiebre">Fiebre</option>
+            <option value="Dolor de cabeza">Dolor de cabeza</option>
+            <option value="Tos seca">Tos seca</option>
+            <option value="Dificultad para respirar">Dificultad para respirar</option>
+        </select><br>
+
+        <label for="diagnostico">Diagnóstico:</label>
+        <textarea id="diagnostico" name="diagnostico" rows="4"></textarea><br>
+
+        <label>Tratamiento:</label>
+        <input type="checkbox" id="tratamiento-medicamentos" name="tratamiento[]" value="Medicamentos">
+        <label for="tratamiento-medicamentos">Medicamentos</label>
+        <input type="checkbox" id="tratamiento-reposo" name="tratamiento[]" value="Reposo">
+        <label for="tratamiento-reposo">Reposo</label><br>
+
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>
